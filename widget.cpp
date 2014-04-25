@@ -32,7 +32,7 @@ Widget::Widget(QWidget *parent) :
     QObject::connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(calc()));
     QObject::connect(ui->pushButton_2,SIGNAL(clicked()),this,SLOT(reset()));
     QObject::connect(ui->pushButton_2,SIGNAL(clicked()),scene,SLOT(update()));
-
+            draw_graph(ui->spinBox->value(),m);
 }
 
 Widget::~Widget()
@@ -74,7 +74,6 @@ void Widget::start()
     }
     else
     {
-        draw_graph(ui->spinBox->value(),m);
         timer->start();
     }
 
